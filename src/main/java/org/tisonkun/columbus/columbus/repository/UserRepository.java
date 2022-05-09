@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Korandoru Contributors
+ * Copyright 2022 tison <wander4096@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package io.korandoru.columbus.columbus.repository;
+package org.tisonkun.columbus.columbus.repository;
 
-import io.korandoru.columbus.columbus.model.User;
+import org.tisonkun.columbus.columbus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.DataClassRowMapper;

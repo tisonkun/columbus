@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Korandoru Contributors
+ * Copyright 2022 tison <wander4096@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,7 @@
  * limitations under the License.
  */
 
-package io.korandoru.columbus.columbus;
+package org.tisonkun.columbus.columbus.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
-
-@SpringBootApplication
-@EnableCaching
-public class ColumbusApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ColumbusApplication.class, args);
-    }
-
+public record UidRequest(Long uid) {
 }

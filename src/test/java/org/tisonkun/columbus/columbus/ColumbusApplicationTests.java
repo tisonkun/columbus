@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Korandoru Contributors
+ * Copyright 2022 tison <wander4096@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
-package io.korandoru.columbus.columbus.model;
+package org.tisonkun.columbus.columbus;
 
-public record User(
-    long uid,
-    String nickname,
-    String phone
-) {
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ColumbusApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
 }
