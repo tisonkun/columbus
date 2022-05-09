@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package org.tisonkun.columbus.columbus;
+package org.tisonkun.columbus.columbus.config;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.tisonkun.columbus.columbus.config.ColumbusTestConfig;
+import javax.sql.DataSource;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@SpringBootTest(classes = {ColumbusApplication.class, ColumbusTestConfig.class})
-@ActiveProfiles("test")
-class ColumbusApplicationTests {
+@TestConfiguration
+public class ColumbusTestConfig {
 
-    @Test
-    void contextLoads() {
+    @Bean
+    public DataSource dataSource() {
+        final var dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.h2.Driver");
+        dataSource.setUrl("jdbc:h2:mem:db");
+        dataSource.setUsername("columbus");
+        return dataSource;
     }
 
 }

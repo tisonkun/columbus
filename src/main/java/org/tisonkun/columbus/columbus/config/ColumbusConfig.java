@@ -21,6 +21,7 @@ import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.cache.RedisCacheManagerBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
@@ -28,9 +29,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
-public class ColumbusConfiguration {
+public class ColumbusConfig {
 
     @Bean
+    @Profile("!test")
     public DataSource dataSource() {
         final var dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -45,6 +47,7 @@ public class ColumbusConfiguration {
     }
 
     @Bean
+    @Profile("!test")
     public RedisCacheManagerBuilderCustomizer redisCacheManagerBuilderCustomizer() {
         final var defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig()
             .entryTtl(Duration.ofHours(1))

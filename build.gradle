@@ -1,4 +1,5 @@
 plugins {
+    id 'com.adarshr.test-logger' version '3.2.0'
     id 'com.diffplug.spotless' version '6.3.0'
     id 'org.springframework.boot' version '3.0.0-M2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -30,6 +31,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.h2database:h2'
 }
 
 spotless {
