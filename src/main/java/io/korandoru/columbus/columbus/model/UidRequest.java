@@ -16,5 +16,5 @@
 
 package io.korandoru.columbus.columbus.model;
 
-public record UidRequest(long uid) {
+public record UidRequest(Long uid) {
 }

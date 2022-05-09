@@ -18,6 +18,7 @@ package io.korandoru.columbus.columbus.repository;
 
 import io.korandoru.columbus.columbus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -32,6 +33,7 @@ public class UserRepository {
         this.jdbc = jdbc;
     }
 
+    @Cacheable("user")
     public User getUser(long uid) {
         return this.jdbc.queryForObject("SELECT * FROM columbus WHERE uid = ?", new DataClassRowMapper<>(User.class), uid);
     }

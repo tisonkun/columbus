@@ -20,6 +20,7 @@ import io.korandoru.columbus.columbus.model.UidRequest;
 import io.korandoru.columbus.columbus.model.User;
 import io.korandoru.columbus.columbus.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,7 +40,9 @@ public class UserController {
     @RequestMapping("/uid")
     @ResponseBody
     public User getUser(@RequestBody UidRequest request) {
-        return this.userRepository.getUser(request.uid());
+        final var uid = request.uid();
+        Assert.notNull(uid, "uid must be present.");
+        return this.userRepository.getUser(uid);
     }
 
 }
