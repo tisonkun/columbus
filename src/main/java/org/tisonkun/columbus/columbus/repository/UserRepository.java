@@ -16,12 +16,12 @@
 
 package org.tisonkun.columbus.columbus.repository;
 
-import org.tisonkun.columbus.columbus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.tisonkun.columbus.columbus.model.User;
 
 @Repository
 public class UserRepository {

@@ -16,15 +16,15 @@
 
 package org.tisonkun.columbus.columbus.controller;
 
-import org.tisonkun.columbus.columbus.model.UidRequest;
-import org.tisonkun.columbus.columbus.model.User;
-import org.tisonkun.columbus.columbus.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.tisonkun.columbus.columbus.model.UidRequest;
+import org.tisonkun.columbus.columbus.model.User;
+import org.tisonkun.columbus.columbus.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/user")
