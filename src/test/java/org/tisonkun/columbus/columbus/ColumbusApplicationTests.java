@@ -21,7 +21,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.tisonkun.columbus.columbus.config.ColumbusTestConfig;
 
-@SpringBootTest(classes = {ColumbusApplication.class, ColumbusTestConfig.class})
+@SpringBootTest(classes = {ColumbusTestConfig.class})
 @ActiveProfiles("test")
 class ColumbusApplicationTests {
 

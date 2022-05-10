@@ -29,10 +29,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
+@Profile("!test")
 public class ColumbusConfig {
 
     @Bean
-    @Profile("!test")
     public DataSource dataSource() {
         final var dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -47,7 +47,6 @@ public class ColumbusConfig {
     }
 
     @Bean
-    @Profile("!test")
     public RedisCacheManagerBuilderCustomizer redisCacheManagerBuilderCustomizer() {
         final var defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig()
             .entryTtl(Duration.ofHours(1))
