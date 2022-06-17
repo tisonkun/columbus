@@ -17,8 +17,6 @@ name: CI
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '25 4 * * *'
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
